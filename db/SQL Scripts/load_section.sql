@@ -1,3 +1,4 @@
+USE ScheduleMe;
 DELETE FROM section;
 INSERT INTO section (course_id, sec_id, semester, year, time_slot_id, prof_id, room_num) VALUES ("AFST 100", 1, "Spring", 2017, 1, 558, "SOND208");
 INSERT INTO section (course_id, sec_id, semester, year, time_slot_id, prof_id, room_num) VALUES ("AFST 100", 2, "Spring", 2017, 2, 271, "SOND113");

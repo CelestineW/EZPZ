@@ -1,3 +1,4 @@
+USE ScheduleMe;
 DELETE FROM time_slot;
 INSERT INTO time_slot (time_slot_id, days, start_hr, start_min, end_hr, end_min) VALUES (1, "NNYNNNN", 16, 30, 19, 0);
 INSERT INTO time_slot (time_slot_id, days, start_hr, start_min, end_hr, end_min) VALUES (2, "NYNYNNN", 14, 30, 15, 45);

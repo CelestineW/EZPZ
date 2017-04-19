@@ -1,3 +1,4 @@
+Use ScheduleMe;
 DELETE FROM professor;
 INSERT INTO professor (prof_id, last_name, first_name) VALUES (0, "Unknown", "Unknown");
 INSERT INTO professor (prof_id, last_name, first_name) VALUES (1, "Aaron", "Cara");

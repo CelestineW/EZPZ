@@ -1,3 +1,4 @@
+USE ScheduleMe;
 DELETE FROM course;
 INSERT INTO course (course_id, title) VALUES ("AFST 100", "Introduction to The Black Experience");
 INSERT INTO course (course_id, title) VALUES ("AFST 205", "Contemporary Black Popular Culture");

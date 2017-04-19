@@ -1,8 +1,8 @@
-use cblake2;
+use ScheduleMe;
 
 create table course
 	(course_id		varchar(9), 
-	 title			varchar(50) not null, 
+	 title			varchar(150) not null, 
 	 primary key (course_id)
 	);
 
