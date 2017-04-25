@@ -1,0 +1,6 @@
+Amazon Web Services RDS Free Tier
+
+Hostname: ezpz.c6pi6kjq4ljd.us-east-1.rds.amazonaws.com
+Database Name: ScheduleMe
+Username: client
+Password: *You already know*
