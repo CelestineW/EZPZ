@@ -1,5 +1,12 @@
 $(document).ready(function() {
     $("#getStarted").click(function() {
-    	$("#inputFields").append("<p>stuff</p>");
+        $('html, body').animate({
+            scrollTop: $("#inputArea").offset().top
+        }, 500);
     });
+    
+    $("#addCourse").click(function() {
+    	//$("#inputContainer").append($("#baseForm").html());
+    });
+    
 });

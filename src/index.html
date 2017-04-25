@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -50,8 +50,40 @@
 		  <button id="getStarted" class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Get Started</button>
 		</header>
 		
-		<div id="inputFields" class="w3-row-padding w3-padding-64 w3-container">
-			
+		<!-- Template for new inputs -->
+		<div id="baseForm" class="courseInputTemplate w3-row-padding w3-padding-64 w3-container">
+		    <div class="controls controls-row w3-center">
+		    	<span>Course Name</span>    	
+		 		<input type="text" name="courseName" pattern="^[A-Za-z]{3,4}[0-9]{3}$" maxlength="7"
+		 			title="Course Name Format: [3-4 Dept. Code][3 digit number] ex. CMSC447"></input>
+				<select name="priority">
+					<option value="2">Necessary</option>
+					<option value="1">Preferred</option>
+					<option value="0">No Preference</option>
+				</select>
+				<button type="button" id="removeCourse" name="removeCourse">
+		 			<i class="fa fa-times-circle" aria-hidden="true"></i>
+		 		</button>
+		    </div>
+		</div>
+		
+		<!--  Holds input for courses -->
+		<div id="inputArea" class="w3-row-padding w3-padding-64 w3-container w3-center">
+			<form onsubmit='return onSubmit(this)'>
+				<div id="inputContainer" class="newCourseHolder">
+				</div>
+				<div id="inputNotification" class="inputNotification hidden">
+					<p class="maxCoursesAlert">Max Courses Reached (MAX_COURSES)<p>
+				</div>
+				<div>
+					<button type="button" id="addCourse">Add new course</button>
+					<br>
+					<p>Desired Number of Courses
+					<input type="text" name="numCourses" maxlength="1"></input>
+					</p>
+					<button type='submit' id="submitCourses" class="courseSubmission">Go</button>
+				</div>
+			</form>
 		</div>
 		
 		<!-- First Grid -->
@@ -107,17 +139,19 @@
 		 <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
 		</footer>
 		
-		<script src="js/toggleMenu.js"></script>
-        <script src="js/vendor/jquery-3.2.0.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.0.min.js"><\/script>')</script>
+		<script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.0.min.js"><\/script>')</script>
+		<script src="js/vendor/jquery-3.2.0.min.js"></script>
+		<script src="js/courseInput.js"></script>
+		<script src="js/toggleMenu.js"></script> 
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 
-        <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+        <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. 
         <script>
             window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
             ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
         </script>
         <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+        -->
     </body>
 </html>
