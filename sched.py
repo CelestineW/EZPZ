@@ -1,4 +1,4 @@
-Bimport datetime as dt
+import datetime as dt
 import MySQLdb as mc
 import sys
 
@@ -53,27 +53,43 @@ class dbAccess():
                                     passwd = "Passw0rd",
                                     db = "ScheduleMe")
       self.cursor = self.connection.cursor()
+      self.log.log("[dbAccess] Connection to database Established")
     except mc.Error as e:
-      self.log.log("Error %d: %s" % (e.args[0], e.args[1]))
+      self.log.log("[dbAccess] Error %d: %s" % (e.args[0], e.args[1]))
 
   def close(self):
     try:
       self.cursor.close()
       self.connection.close()
-      self.log.log("[testDB] connection closed")
+      self.log.log("[dbAccess] connection to database closed")
     except mc.Error as e:
-      self.log.log("Error %d: %s" % (e.args[0], e.args[1]))
+      self.log.log("[dbAccess] Error %d: %s" % (e.args[0], e.args[1]))
     
   def request(self, course):
     try:
-      sql_command = "SELECT section.course_id, course.title, section.sec_id, professor.last_name, professor.first_name, section.room_num, time_slot.days, time_slot.start_hr" + ", time_slot.start_min, time_slot.end_hr, time_slot.end_min\n" + "FROM course\n" + "INNER JOIN section\n" + "ON section.course_id = course.course_id\n" + "INNER JOIN professor\n" + "ON section.prof_id = professor.prof_id\n" + "INNER JOIN time_slot\n" + "ON section.time_slot_id = time_slot.time_slot_id\n" + "WHERE section.course_id = " + course + ";\n"
+      sql_command = """
+      SELECT section.course_id, course.title, section.sec_id, professor.last_name, professor.first_name, section.room_num, time_slot.days, time_slot.start_hr, time_slot.start_min, time_slot.end_hr, time_slot.end_min
+      FROM course
+      INNER JOIN section
+      ON section.course_id = course.course_id
+      INNER JOIN professor
+      ON section.prof_id = professor.prof_id
+      INNER JOIN time_slot
+      ON section.time_slot_id = time_slot.time_slot_id
+      WHERE section.course_id = """
+      sql_command = sql_command + '"' + course + '";'
       self.cursor.execute(sql_command)
       result = self.cursor.fetchall()
-      self.log.log("[testDB] command executed")
+      self.log.log("[dbAccess] command executed")
+      
+      course = []
       for r in result:
-        self.log.log("[testDB]" + str(r))
+        section = [int(r[7]) + int(r[8]) * .01 , int(r[9]) + int(r[10]) *.01]
+        course.append(section)
+        self.log.log("[dbAccess] " + str(r))
+      return course 
     except mc.Error as e:
-      self.log.log("Error %d: %s" % (e.args[0], e.args[1]))
+      self.log.log("[dbAccess] Error %d: %s" % (e.args[0], e.args[1]))
 
 
 #########################################################
@@ -198,11 +214,16 @@ if __name__ == "__main__":
   log = Logging()
   #testDB(log)
   
+  courses = {}
+
   db = dbAccess(log)
-  db.request("CMSC 202")
+  courses["CMSC 202"] = db.request("CMSC 202")
+  courses["CMSC 201"] = db.request("CMSC 201")
   db.close()
 
-  courses = {"CSMC 201":[[9,10],[11,12]], "CMSC 202":[[11,12]]}
+  # courses = {"CSMC 201":[[9,10],[11,12]], "CMSC 202":[[11,12]]}
+
+  print(courses)
   schedule = generateSchedule(log, courses)
   print(schedule)
 
