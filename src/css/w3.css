@@ -1174,3 +1174,28 @@ a {
 .w3-border-grey, .w3-hover-border-grey:hover, .w3-border-gray, .w3-hover-border-gray:hover {
     border-color: #bbb!important;
 }
+
+
+/* OUR CUSTOM CSS */
+
+.courseInputTemplate {
+    display:none;
+}
+
+.courseSubmission {
+	width: 137px;
+}
+
+.inputNotification {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.newCourse {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.hidden {
+	display:none;
+}
