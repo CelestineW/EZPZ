@@ -50,8 +50,9 @@ if __name__ == "__main__":
   print("hello, world!")
   log = Logging()
   
-  data = json.load(sys.stdin)
-  
+  #data = json.load(sys.stdin)
+  courses = {"CSMC 201":[[9,10],[11,12]], "CMSC 202":[[11,12]]}
+  schedule = ordinary(log, courses, len(courses))
   print("Goodbye, world!")
 
   log.close()
