@@ -2,7 +2,6 @@ from logger import Logging
 from database import dbAccess
 from schedule import generateSchedule
 import datetime as dt
-import MySQLdb as mc
 import json
 import sys
 
