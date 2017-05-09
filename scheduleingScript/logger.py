@@ -1,6 +1,4 @@
 import datetime as dt
-import MySQLdb as mc
-import json
 import sys
 
 class Logging():
