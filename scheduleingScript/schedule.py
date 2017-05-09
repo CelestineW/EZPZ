@@ -76,26 +76,4 @@ def updateTimes(times, end_time, course):
 
 if __name__ == "__main__":
   print("hello, world!")
-  log = Logging()
-  
-  courses = {}
 
-  userCourses = []
-  
-  user_choice = raw_input("Please enter a course (q to quit): ")
-  while user_choice != 'q':
-    userCourses.append(user_choice)
-    user_choice = raw_input("Please enter a course (q to quit): ")
-
-  db = dbAccess(log)
-
-  for c in userCourses:
-    courses[c] = db.request(c)
-  
-  db.close()
-
-  print(courses)
-  schedule = generateSchedule(log, courses, len(courses))
-  print(schedule)
-
-  log.close()

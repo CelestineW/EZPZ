@@ -1,1 +1,56 @@
 [logging] Logging Created
+[dbAccess] Connection to database Established
+[dbAccess] command executed
+[dbAccess] ('CMSC 201', 'Computer Science I for Majors', 1L, 'Gibson', 'Katherine', 'SHER003', 'YNYNNNN', Decimal('13'), Decimal('0'), Decimal('14'), Decimal('15'))
+[dbAccess] ('CMSC 201', 'Computer Science I for Majors', 6L, 'Gibson', 'Katherine', 'ENGR104A', 'YNNNNNN', Decimal('17'), Decimal('30'), Decimal('18'), Decimal('20'))
+[dbAccess] ('CMSC 201', 'Computer Science I for Majors', 7L, 'Wilson', 'Krystle', 'PUP 105', 'NYNYNNN', Decimal('11'), Decimal('30'), Decimal('12'), Decimal('45'))
+[dbAccess] ('CMSC 201', 'Computer Science I for Majors', 8L, 'Wilson', 'Krystle', 'ENGR104A', 'NYNNNNN', Decimal('19'), Decimal('10'), Decimal('20'), Decimal('0'))
+[dbAccess] ('CMSC 201', 'Computer Science I for Majors', 13L, 'Gibson', 'Katherine', 'MEYR030', 'YNYNNNN', Decimal('16'), Decimal('0'), Decimal('17'), Decimal('15'))
+[dbAccess] ('CMSC 201', 'Computer Science I for Majors', 14L, 'Gibson', 'Katherine', 'ENGR104A', 'YNNNNNN', Decimal('10'), Decimal('0'), Decimal('10'), Decimal('50'))
+[dbAccess] ('CMSC 201', 'Computer Science I for Majors', 19L, 'Wilson', 'Krystle', 'ENGR027', 'NYNYNNN', Decimal('14'), Decimal('30'), Decimal('15'), Decimal('45'))
+[dbAccess] command executed
+[dbAccess] ('CMSC 202', 'Computer Science II for Majors', 1L, 'Dixon', 'Jeremy', 'PHYS101', 'NYNYNNN', Decimal('10'), Decimal('0'), Decimal('11'), Decimal('15'))
+[dbAccess] ('CMSC 202', 'Computer Science II for Majors', 6L, 'Kukla', 'James', 'ITE 102', 'YNYNNNN', Decimal('17'), Decimal('30'), Decimal('18'), Decimal('45'))
+[dbAccess] ('CMSC 202', 'Computer Science II for Majors', 11L, 'Dixon', 'Jeremy', 'ITE 102', 'NYNYNNN', Decimal('14'), Decimal('30'), Decimal('15'), Decimal('45'))
+[dbAccess] ('CMSC 202', 'Computer Science II for Majors', 16L, 'Shehab Uddin Ayub', 'Abu', 'LH1 101', 'NYNYNNN', Decimal('16'), Decimal('0'), Decimal('17'), Decimal('15'))
+[dbAccess] command executed
+[dbAccess] ('CMSC 203', 'Discrete Structures', 1L, 'Horta JR', 'Arnaldo', 'MP  101', 'YNYNNNN', Decimal('17'), Decimal('30'), Decimal('18'), Decimal('45'))
+[dbAccess] ('CMSC 203', 'Discrete Structures', 2L, 'Christian', 'William', 'ITE 104', 'YNYNNNN', Decimal('17'), Decimal('30'), Decimal('18'), Decimal('45'))
+[dbAccess] ('CMSC 203', 'Discrete Structures', 3L, 'Lomonaco JR', 'Samuel', 'ITE 227', 'YNYNNNN', Decimal('13'), Decimal('0'), Decimal('14'), Decimal('15'))
+[dbAccess] ('CMSC 203', 'Discrete Structures', 4L, 'Yesha', 'Yaacov', 'FA  014', 'NYNYNNN', Decimal('10'), Decimal('0'), Decimal('11'), Decimal('15'))
+[dbAccess] ('CMSC 203', 'Discrete Structures', 5L, 'Yesha', 'Yaacov', 'FA  014', 'NYNYNNN', Decimal('11'), Decimal('30'), Decimal('12'), Decimal('45'))
+[dbAccess] ('CMSC 203', 'Discrete Structures', 6L, 'Marron', 'Christopher', 'SHER003', 'NYNYNNN', Decimal('13'), Decimal('0'), Decimal('14'), Decimal('15'))
+[dbAccess] connection to database closed
+[dbAccess] Connection to database Established
+[dbAccess] command executed
+[dbAccess] ('CMSC 341', 'Data Structures', 1L, 'Chang', 'Richard', 'SHER150', 'NYNYNNN', Decimal('11'), Decimal('30'), Decimal('12'), Decimal('45'))
+[dbAccess] ('CMSC 341', 'Data Structures', 2L, 'Park', 'John', 'FA  014', 'NYNYNNN', Decimal('13'), Decimal('0'), Decimal('14'), Decimal('15'))
+[dbAccess] ('CMSC 341', 'Data Structures', 3L, 'Park', 'John', 'FA  014', 'NYNYNNN', Decimal('14'), Decimal('30'), Decimal('15'), Decimal('45'))
+[dbAccess] ('CMSC 341', 'Data Structures', 4L, 'Chang', 'Richard', 'SHER150', 'NYNYNNN', Decimal('10'), Decimal('0'), Decimal('11'), Decimal('15'))
+[dbAccess] ('CMSC 341', 'Data Structures', 5L, 'Hirsch', 'Katherine', 'ITE 227', 'YNYNNNN', Decimal('19'), Decimal('10'), Decimal('20'), Decimal('25'))
+[dbAccess] connection to database closed
+[dbAccess] Connection to database Established
+[dbAccess] command executed
+[dbAccess] ('MATH 151', 'Calculus and Analytic Geometry I', 1L, 'Tighe', 'Bonny', 'SHER003', 'YNYNYNN', Decimal('11'), Decimal('0'), Decimal('11'), Decimal('50'))
+[dbAccess] ('MATH 151', 'Calculus and Analytic Geometry I', 6L, 'Nanes', 'Kalman', 'AD  101', 'YNYNYNN', Decimal('13'), Decimal('0'), Decimal('13'), Decimal('50'))
+[dbAccess] ('MATH 151', 'Calculus and Analytic Geometry I', 11L, 'Li', 'Xinxuan', 'LH1 101', 'NYNYNNN', Decimal('17'), Decimal('30'), Decimal('18'), Decimal('45'))
+[dbAccess] command executed
+[dbAccess] ('MATH 152', 'Calculus and Analytic Geometry II', 1L, 'Tighe', 'Bonny', 'SHER003', 'YNYNYNN', Decimal('10'), Decimal('0'), Decimal('10'), Decimal('50'))
+[dbAccess] ('MATH 152', 'Calculus and Analytic Geometry II', 6L, 'Dean', 'Brian', 'AD  101', 'NYNYNNN', Decimal('13'), Decimal('0'), Decimal('14'), Decimal('15'))
+[dbAccess] ('MATH 152', 'Calculus and Analytic Geometry II', 11L, 'Campbell', 'Robert', 'LH1 101', 'YNYNNNN', Decimal('17'), Decimal('30'), Decimal('18'), Decimal('45'))
+[dbAccess] connection to database closed
+[schedGen] generating schedule...
+[schedGen] Earliest time found was MATH 152 at [10.0, 10.5]
+[schedGen] Earliest time found was MATH 151 at [11.0, 11.5]
+[schedGen] Earliest time found was  at [25, 0]
+[schedGen] Finished generating schedule
+[schedGen] generating schedule...
+[schedGen] Earliest time found was CMSC 341 at [10.0, 11.15]
+[schedGen] Earliest time found was  at [25, 0]
+[schedGen] Finished generating schedule
+[schedGen] generating schedule...
+[schedGen] Earliest time found was CMSC 201 at [10.0, 10.5]
+[schedGen] Earliest time found was CMSC 203 at [11.3, 12.45]
+[schedGen] Finished generating schedule
+{'CMSC 341': [10.0, 11.15], 'MATH 151': [11.0, 11.5], 'MATH 152': [10.0, 10.5], 'CMSC 201': [10.0, 10.5]}
+[logging] Logging Closed

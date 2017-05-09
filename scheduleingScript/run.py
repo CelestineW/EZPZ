@@ -1,25 +1,25 @@
 from logger import Logging
 from database import dbAccess
 from schedule import generateSchedule
+from schedule import findEarliest
 import datetime as dt
-import MySQLdb as mc
 import json
 import sys
 
-def necessary(log, nCourse, pCourse, oCourse, n):
+def necessary(log, nCourses, pCourses, oCourses, n):
   schedule = {}
   schedule = generateSchedule(log, schedule, nCourses, n)
   schedule = generateSchedule(log, schedule, pCourses, n)
   schedule = generateSchedule(log, schedule, oCourses, n)
   return schedule
 
-def prefered(log, pCourse, oCourse, n):
+def prefered(log, pCourses, oCourses, n):
   schedule = {}
   schedule = generateSchedule(log, schedule, pCourses, n)
   schedule = generateSchedule(log, schedule, oCourses, n)
   return schedule
 
-def ordinary(log, oCourse, n):
+def ordinary(log, oCourses, n):
   schedule = {}
   schedule = generateSchedule(log, schedule, oCourses, n)
   return schedule
@@ -40,17 +40,40 @@ def inLineInput(log):
     courses[c] = db.request(c)
   
   db.close()
+  return courses
 
-  print(courses)
-  schedule = {}
-  schedule = generateSchedule(log, schedule, courses, len(courses))
-  print(schedule)
+def pref_test(log):
+  print("No Preference")
+  oCourses = inLineInput(log) 
+  print("Preference")
+  pCourses = inLineInput(log) 
+  print("Necessary")
+  nCourses = inLineInput(log) 
+
+  schedule = necessary(log, nCourses, pCourses, oCourses, numCourses)
+  log.log(str(schedule))
+
+def retest(log):
+  print("No Preference")
+  oCourses = inLineInput(log) 
+  
+  times, course = findEarliest(oCourses)
+  oCourses[course].remove(times)
+
+  schedule = ordinary(log, oCourses, len(oCourses))
+  log.log(str(schedule))
 
 if __name__ == "__main__":
   print("hello, world!")
   log = Logging()
   
-  data = json.load(sys.stdin)
+  numCourses = int(raw_input("Please enter number of Courses: "))
+  regen = raw_input("Would you like to regenerate the schedule?: ")
+  
+  if regen.lower() == "n":
+    pref_test(log)
+  else:
+    retest(log)
   
   print("Goodbye, world!")
 
