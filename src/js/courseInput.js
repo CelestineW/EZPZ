@@ -1,6 +1,8 @@
+var len = 0;
+
 $(document).ready(function() {
 	
-	var MAX_COURSES = 5;
+	var MAX_COURSES = 10;
 	
 	//Get the html from template
 	$('<div/>', {
@@ -18,7 +20,8 @@ $(document).ready(function() {
     		//Get the html from template and hide and slideDown for transtion.
 	        $('<div/>', {
 	            'class' : 'newCourse', html: GetHtml()
-	        }).hide().appendTo('#inputContainer').slideDown('slow'); 
+	        }).hide().appendTo('#inputContainer').slideDown(); 
+	        len++;
     	}
     	console.log("len = %d", len);
     });
@@ -35,13 +38,21 @@ $(document).ready(function() {
         	$('#inputNotification').hide();
         }
     });
- })
+})
  
 //Get the template and update the input field names
 function GetHtml() {
-    var len = $('.newCourse').length;
-    console.log(len);
+    //var len = $('.newCourse').length;
+	len++;
     var $html = $('.courseInputTemplate').clone();
+    var lastElement = $('.courseNameField:last');
+    //console.log("Last field:");
+    //console.log(lastElement.attr('name'));
+    //console.log(lastElement.attr('name'));
+    //var lastNum = lastElement.attr('name').split([0-9])[1];
+    //console.log("$lastNum: %d", $lastNum);
+    console.log(len);
+    
     
     //make field names unique
     $html.find("input[name=courseName]")[0].name="courseName"+len;
@@ -63,7 +74,15 @@ function onSubmit(form){
   console.log("Formatted:");
   console.log(JSON.stringify(formattedData));
   
+  
+  
   //Handle formattedData
+  console.log("Request sent to script.");
+
+  //Call Script with request
+  //var scheduleObj = scriptCall(formattedData);
+  var scheduleObj = {};
+  renderSchedule(scheduleObj);
   return false; 
 }
 

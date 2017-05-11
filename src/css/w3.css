@@ -1177,6 +1177,10 @@ a {
 
 
 /* OUR CUSTOM CSS */
+.calendarDisplay {
+	max-width: 900px;
+	margin: 0 auto;
+}
 
 .courseInputTemplate {
     display:none;
@@ -1189,12 +1193,44 @@ a {
 .inputNotification {
 	margin-top: 5px;
 	margin-bottom: 5px;
+	
+    width: 52.5%;
+    margin-left: 448px;
 }
 
 .newCourse {
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
+
+.removeButton {
+}
+
+/*
+.maxCoursesAlert{
+	
+}
+*/
+
+/*
+.regenerateButton{
+	
+	padding: 10px;
+	height: 25px;
+	width: 100px;
+	
+}
+
+.clockIcon {
+	height: 250px;
+	width: 250px;
+}
+
+.scheduleIcon {
+	height: 250px;
+	width: 250px;
+}
+*/
 
 .hidden {
 	display:none;
