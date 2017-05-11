@@ -26,6 +26,7 @@
         <!-- Add your site or application content here -->
 
 		<!-- Navbar -->
+		<!--  
 		<div class="w3-top">
 		  <div class="w3-bar w3-yellow w3-card-2 w3-left-align w3-large">
 		    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-yellow" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
@@ -34,14 +35,17 @@
 		    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">???</a>
 		    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">About</a>
 		  </div>
+		  -->
 		
 		  <!-- Navbar on small screens -->
+		  <!--
 		  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
 		    <a href="#" class="w3-bar-item w3-button w3-padding-large">Scheduler</a>
 		    <a href="#" class="w3-bar-item w3-button w3-padding-large">???</a>
 		    <a href="#" class="w3-bar-item w3-button w3-padding-large">About</a>
 		  </div>
 		</div>
+		-->
 		
 		<!-- Header -->
 		<header class="w3-container w3-yellow w3-center" style="padding:128px 16px">
@@ -54,26 +58,26 @@
 		<div id="baseForm" class="courseInputTemplate w3-row-padding w3-padding-64 w3-container">
 		    <div class="controls controls-row w3-center">
 		    	<span>Course Name</span>    	
-		 		<input type="text" name="courseName" pattern="^[A-Za-z]{3,4}[0-9]{3}$" maxlength="7"
-		 			title="Course Name Format: [3-4 Dept. Code][3 digit number] ex. CMSC447"></input>
+		 		<input type="text" name="courseName" class="courseNameField" pattern="^[A-Za-z]{3,4}[0-9]{3}$" maxlength="7"
+		 			title="[3-4 Dept. Code][3 digit number] ex. CMSC447"></input>
 				<select name="priority">
 					<option value="2">Necessary</option>
 					<option value="1">Preferred</option>
 					<option value="0">No Preference</option>
 				</select>
-				<button type="button" id="removeCourse" name="removeCourse">
+				<button type="button" class="removeButton" id="removeCourse" name="removeCourse">
 		 			<i class="fa fa-times-circle" aria-hidden="true"></i>
 		 		</button>
 		    </div>
 		</div>
 		
 		<!--  Holds input for courses -->
-		<div id="inputArea" class="w3-row-padding w3-padding-64 w3-container w3-center">
+		<div id="inputArea" class="w3-row-padding w3-padding-32 w3-container w3-center">
 			<form onsubmit='return onSubmit(this)'>
 				<div id="inputContainer" class="newCourseHolder">
 				</div>
-				<div id="inputNotification" class="inputNotification hidden">
-					<p class="maxCoursesAlert">Max Courses Reached (MAX_COURSES)<p>
+				<div id="inputNotification" class="inputNotification w3-red w3-center hidden">
+						<p class="maxCoursesAlert">Max Courses Reached (MAX_COURSES = 10)<p>
 				</div>
 				<div>
 					<button type="button" id="addCourse">Add new course</button>
@@ -84,22 +88,35 @@
 					<button type='submit' id="submitCourses" class="courseSubmission">Go</button>
 				</div>
 			</form>
+			<p>
+				<button type='button' id="regenerate" class="regenerateButton hidden">Generate Another</button>
+			</p>
+		</div>
+		
+		<!-- Weekly View -->
+		<div class="w3-row-padding w3-container">
+		  <div class="w3-content" id="calendarArea">
+		  		<div class="w3-center w3-red" id="regenExhausted">
+		  			<p> Possible schedule space exhausted, schedules now repeating.</p>
+		  		</div>
+		  		<div class="calendarDisplay" id="calendar">
+		  		</div>
+		  </div>
 		</div>
 		
 		<!-- First Grid -->
 		<div class="w3-row-padding w3-padding-64 w3-container">
 		  <div class="w3-content">
 		    <div class="w3-twothird">
-		      <h1>Lorem Ipsum</h1>
-		      <h5 class="w3-padding-32">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
+		      <h1>What is ScheduleMe?</h1>
+		      <h5 class="w3-padding-32">ScheduleMe is simple</h5>
 		
-		      <p class="w3-text-grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
-		        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-		        laboris nisi ut aliquip ex ea commodo consequat.</p>
+		      <p class="w3-text-grey">ScheduleMe facilitates student scheduling and semester planning. Students can add a variety of courses to the pool, and ScheduleMe will generate a non-conflicting schedule with the desired number of courses. If you don't like the schedule you received, just generate another!</p>
 		    </div>
 		
 		    <div class="w3-third w3-center">
-		      <i class="fa fa-anchor w3-padding-64 w3-text-yellow"></i>
+		      <i class="fa fa-calendar w3-text-yellow fa-5x" aria-hidden="true"></i>
+
 		    </div>
 		  </div>
 		</div>
@@ -108,16 +125,14 @@
 		<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
 		  <div class="w3-content">
 		    <div class="w3-third w3-center">
-		      <i class="fa fa-coffee w3-padding-64 w3-text-yellow w3-margin-right"></i>
+		      <i class="fa fa-clock-o w3-text-yellow fa-5x" aria-hidden="true"></i>
 		    </div>
 		
 		    <div class="w3-twothird">
-		      <h1>Lorem Ipsum</h1>
-		      <h5 class="w3-padding-32">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
+		      <h1>Register for courses Spring 2017!</h1>
+		      <h5 class="w3-padding-32">Don't forget!</h5>
 		
-		      <p class="w3-text-grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
-		        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-		        laboris nisi ut aliquip ex ea commodo consequat.</p>
+		      <p class="w3-text-grey">Don't know you registration time? Click <a href="http://registrar.umbc.edu/files/2016/10/Spring-2017-Advanced-Registration-Appointment-Grid.pdf" target="_blank" >HERE</a> to find out!</p>
 		    </div>
 		  </div>
 		</div>
@@ -139,12 +154,23 @@
 		 <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
 		</footer>
 		
+		<!--  Our JS -->
 		<script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.0.min.js"><\/script>')</script>
 		<script src="js/vendor/jquery-3.2.0.min.js"></script>
+		<script src="js/dummySchedules.js"></script>
 		<script src="js/courseInput.js"></script>
+		<script src="js/renderSchedule.js"></script>
 		<script src="js/toggleMenu.js"></script> 
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        
+        <!-- Calender Display, Sourced from https://fullcalendar.io/ -->
+        <link href='js/vendor/fullcalendar-3.4.0/fullcalendar.min.css' rel='stylesheet' />
+		<link href='js/vendor/fullcalendar-3.4.0/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+		<script src='js/vendor/fullcalendar-3.4.0/lib/moment.min.js'></script>
+		<script src='js/vendor/fullcalendar-3.4.0/lib/jquery.min.js'></script>
+		<script src='js/vendor/fullcalendar-3.4.0/fullcalendar.min.js'></script>
+        
 
         <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. 
         <script>
